@@ -78,7 +78,57 @@
                 if(isset($_GET['name']) || isset($_GET['icon']) || isset($_GET['money']) || isset($_GET['text'])){
                     $name = $_GET['name'];
                     $icon = $_GET['icon'];
-                    $money = $_GET['money'];
+                    $money = (int)$_GET['money'];
+                    if($money <= 199){
+                        //青
+                        $top = '#1565C0';
+                        $bottom = '#1565C0';
+                        $nameFont = '#ffffffb3';
+                        $moneyFont = '#ffffff';
+                        $textFont = '#ffffff';
+                    }else if($money <= 499){
+                        //水色
+                        $top = '#00B8D4';
+                        $bottom = '#00E5FF';
+                        $nameFont = '#000000b3';
+                        $moneyFont = '#000000';
+                        $textFont = '#000000';
+                    }else if($money <= 999){
+                        //緑
+                        $top = '#00BFA5';
+                        $bottom = '#1DE9B6';
+                        $nameFont = '#000000b3';
+                        $moneyFont = '#000000';
+                        $textFont = '#000000';
+                    }else if($money <= 1999){
+                        //黄色
+                        $top = '#FFB300';
+                        $bottom = '#FFCA28';
+                        $nameFont = '#000000b3';
+                        $moneyFont = '#000000';
+                        $textFont = '#000000';
+                    }else if($money <= 4999){
+                        //オレンジ
+                        $top = '#E65100';
+                        $bottom = '#F57C00';
+                        $nameFont = '#ffffffb3';
+                        $moneyFont = '#ffffff';
+                        $textFont = '#ffffff';
+                    }else if($money <= 9999){
+                        //マゼンタ
+                        $top = '#C2185B';
+                        $bottom = '#E91E63';
+                        $nameFont = '#ffffffb3';
+                        $moneyFont = '#ffffff';
+                        $textFont = '#ffffff';
+                    }else{
+                        //赤
+                        $top = '#D00000';
+                        $bottom = '#E62117';
+                        $nameFont = '#ffffffb3';
+                        $moneyFont = '#ffffff';
+                        $textFont = '#ffffff';
+                    }
                     $text = $_GET['text'];
                     $state = true;
                 }else{
@@ -87,51 +137,24 @@
             ?>
             <div id="preview">
                 <div id="superchat">
-                    <div id="superchat-top">
+                    <div id="superchat-top" style="<?php if($state == true){echo "background:".$top.";";} ?>">
                         <div id="superchat-top-left">
                             <div id="icon">
-                                <img src="
-                                <?php
-                                if($state == true){
-                                    echo $icon;
-                                }else{
-                                    echo "images/icon.png";
-                                }
-                                ?>
-                                ">
+                                <img src="<?php if($state == true){echo $icon;}else{echo "images/icon.png";}?>">
                             </div>
                         </div>
                         <div id="superchat-top-right">
-                            <div id="name">
-                                <?php
-                                    if($state == true){
-                                        echo $name;
-                                    }else{
-                                        echo "SuperChat Generator";
-                                    }
-                                ?>
+                            <div id="name" style="<?php if($state == true){echo "color:".$nameFont.";";}?>">
+                                <?php if($state == true){echo $name;}else{echo "SuperChat Generator";}?>
                             </div>
-                            <div id="money">
-                                
-                                <?php
-                                if($state == true){
-                                    echo "￥" . $money;
-                                }else{
-                                    echo "￥10,000";
-                                }
-                                ?>
+                            <div id="money"  style="<?php if($state == true){echo "color:".$moneyFont.";";} ?>">
+                                <?php if($state == true){echo "￥" . $money;}else{echo "￥10,000";}?>
                             </div>
                         </div>
                     </div>
-                    <div id="superchat-bottom">
-                        <div id="text">
-                            <?php
-                            if($state == true){
-                                echo $text;
-                            }else{
-                                echo "すーぱーちゃーーーーーーっと！";
-                            }
-                            ?>
+                    <div id="superchat-bottom" style="<?php if($state == true){echo "background:".$bottom.";";} ?>">
+                        <div id="text" style="<?php if($state == true){echo "color:".$textFont.";";} ?>">
+                            <?php if($state == true){echo $text;}else{echo "すーぱーちゃーーーーーーっと！";}?>
                         </div>
                     </div>
                 </div>
