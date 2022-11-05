@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div, input, select, option, textarea{
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    main {
+        width: 705px;
+        #section-top{
+            background-color: #b9b9b9;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            h1{
+                font-family: 'Zen Kurenaido', sans-serif;
+                margin: 0;
+                font-size: 35px;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+        }
+        #section-bottom {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            padding: 40px 25px;
+            background-color: #eeeeee;
+            border-radius: 0 0 8px 8px;
+            #form {
+                div{
+                    width: 300px;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                    &:nth-child(1){
+                        margin-top: 0;
+                    }
+                    // &:nth-child(2){
+                    //     input[type="file"]{
+                    //         display: none;
+                    //     }
+                    // }
+                    label{
+                        font-size: 15px;
+                        margin-bottom: 2px;
+                    }
+                    input, textarea, select, option{
+                        background-color: #dddddd;
+                        border: solid 1px gray;
+                    }
+                    input{
+                        height: 26px;
+                        border-radius: 10px;
+                        padding: 2px 10px;
+                    }
+                    textarea{
+                        height: 100px;
+                        border-radius: 10px;
+                        padding: 4px 10px;
+                    }
+                }
+            }
+            #preview {
+                width: 335px;
+                #superchat {
+                    width: 335px;
+                    height: auto;
+                    #superchat-top {
+                        width: calc(100% - 32px);
+                        height: 44px;
+                        padding: 8px 16px;
+                        background-color: #D00000;
+                        border-radius: 4px 4px 0 0;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 16px;
+                        #superchat-top-left{
+                            #icon{
+                                display: flex;
+                                align-items: center;
+                                img{
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                        #superchat-top-right{
+                            #name{
+                                font-size: 14px;
+                                font-family: 'Roboto', sans-serif;
+                                color: #ffffffb3;
+                            }
+                            #money{
+                                font-size: 15px;
+                                font-family: 'Roboto', sans-serif;
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                    #superchat-bottom {
+                        width: calc(100% - 32px);
+                        height: auto;
+                        padding: 8px 16px;
+                        background-color: #E62117;
+                        border-radius: 0 0 4px 4px;
+                        font-size: 15px;
+                        #text{
+                            font-family: 'Roboto', sans-serif;
+                            color: #ffffff;
+                        }
+                    }
+                }
+                input{
+                    width: 100%;
+                    height: 30px;
+                    margin-top: 20px;
+                    border-radius: 15px;
+                    border: solid 1px gray;
+                    background-color: #dddddd;
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 750px){
+    main{
+        width: 95% !important;
+    }
+    #section-bottom{
+        flex-direction: column !important;
+        #form{
+            margin: 0 auto;
+        }
+        #preview{
+            margin: 0 auto;
+            zoom: calc(60/67);
+        }
+    }
+}
