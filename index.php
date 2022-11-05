@@ -15,11 +15,11 @@
     <link rel="icon" href="images/icon.png" sizes="16x16" type="image/png"> <!-- 通常用 -->
 
     <!-- OGPタグ用 -->
-    <meta property="og:url" content="https://pocopota.github.io/superchat-generator/" />
+    <meta property="og:url" content="https://scg.pocopota.com/" />
     <meta property="og:title" content="SuperChat Generator" />
     <meta property="og:type" content="website">
     <meta property="og:description" content="YouTubeのスーパチャットを再現できるジェネレーター">
-    <meta property="og:image" content="https://pocopota.github.io/superchat-generator/images/ogp.png" />
+    <meta property="og:image" content="https://scg.pocopota.com/images/ogp.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@PocoPota_io" />
     <meta property="og:site_name" content="SuperChat Generator" />
